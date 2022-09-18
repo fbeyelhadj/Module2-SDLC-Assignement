@@ -24,7 +24,9 @@ public class TextAnalyzer {
 		Map<String, Integer> stats = new HashMap<String, Integer>();
 		
 		  countFrequencies("C:\\Users\\fatim\\eclipse-workspace\\SDLC Assignment\\TheRavenPoem.txt" , stats);
-		System.out.println(stats);
+		  System.out.println(" The Reven Poem Words and their frequencies sorted ");
+		  stats.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue()
+                  .reversed().thenComparing(Map.Entry.comparingByKey())).forEach(System.out::println);
 
 	}
 
